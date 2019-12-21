@@ -1,0 +1,40 @@
+Two main problem of writing an aspect oriented program in an object oriented manner includes
+
+-Code Tangling
+	-We have logging or security code tangled in
+-code scattering
+	-if we need to change the logging logic we would have to update multiple  	classes.
+
+Termilnologies
+*ASPECT:module of code for cross-cutting concerns.
+*ADVICE:What action is taken and when it should be applied.
+*JOIN POINT:when to apply the code during program execution.
+*POINTCUT: A predicate expression for where advice should be applied.
+
+Advice Types
+#Before Advice:Run the code before the method executes.e.g=@Transactional
+#After finally advice: Run the code After the method executes a finally block in a try catch
+#After Returning Advice:Run after a succussful completion of a method
+#After throwing Advice:Run if method method throws exception
+#Around Advice:Run before and After method
+
+
+*cross cutting concern::
+	Basic infrastructure code that all application will need
+
+Additional AOP use cases
+-Most common is for logging security transactions
+-Audit logging -> who what when and where
+-Exception Handling->log exception and notify devops team
+-Api Management->like how many times has a method been called by a user
+
+
+Advantages of App
+-Re-useable Modules
+-Resolve code tangling
+-Resolve code scattering.
+-Applied selectively based on configuration
+
+DisAdvantages of App
+-Too many Aspect and app flow is hard to follow.
+-Minor Performance cost for aspect execution(Run time weaving) use by Spring Amp
